@@ -31,6 +31,10 @@ function read(inputfile) {
     $('h6').addClass('win-type-body');
     $('input[type="checkbox"]').addClass('win-checkbox');
     $('body').addClass('win-type-body');
+    ['text', 'password', 'email', 'number', 'tel', 'url', 'search'].forEach(function(input) {
+      $('input[type="' + input + '"]').addClass('win-textbox');
+    });
+
     var output = beautify_html($.html());
     output = output.replace(/\&\#xFEFF\;\n/, '');
     output = output.replace(/\&\#xFEFF\;/, '');
